@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeponShop : MonoBehaviour
 {
-    public bool enter = false;
+    public GameObject GameObject;
+    bukiyaBotton botton;
+
+    private void Start()
+    {
+        botton = gameObject.GetComponent<bukiyaBotton>();
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            enter = true;
+            botton.enter = true;
         }
     }
 
@@ -18,7 +25,7 @@ public class WeponShop : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            enter = false;
+           botton.enter = false;
         }
     }
 }

@@ -7,12 +7,11 @@ public class bukiyaBotton : MonoBehaviour
 {
 
     LoadScene scene;
-    bool enter = false;
+    public bool enter;
 
     // Start is called before the first frame update
     void Start()
     {
-
         scene = GetComponent<LoadScene>();
         gameObject.SetActive(false);
     }
@@ -20,7 +19,7 @@ public class bukiyaBotton : MonoBehaviour
     private void Update()
     {
 
-        if (enter)
+        if (enter == true)
         {
             gameObject.SetActive(true);
         }
