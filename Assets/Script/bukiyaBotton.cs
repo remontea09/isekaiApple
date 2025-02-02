@@ -5,17 +5,14 @@ using UnityEngine.UI;
 
 public class bukiyaBotton : MonoBehaviour
 {
-
-    LoadScene scene;
-    public bool enter = false;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        scene = GetComponent<LoadScene>();
         gameObject.SetActive(false);
+        
     }
-
 
     public void ButtonA()
     {
@@ -27,12 +24,9 @@ public class bukiyaBotton : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
-
-
-    void OnClikc()
+    public void OnClick()
     {
-        scene.bukiyaLoad();
+        player.transform.position = new Vector3(100, 5, 0);
     }
 
 }
