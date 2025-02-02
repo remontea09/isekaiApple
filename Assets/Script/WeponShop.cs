@@ -6,21 +6,20 @@ using UnityEngine.UI;
 
 public class WeponShop : MonoBehaviour
 {
-    public GameObject GameObject;
+    public GameObject cv;
     bukiyaBotton botton;
 
     private void Start()
     {
-        botton = gameObject.GetComponent<bukiyaBotton>();
+        botton = cv.GetComponent<bukiyaBotton>();
     }
 
 
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            botton.enter = true;
-            Debug.Log("true");
+            botton.ButtonA();
         }
     }
 
@@ -28,8 +27,7 @@ public class WeponShop : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-           Debug.Log("false");
-           botton.enter = false;
+           botton.ButtonF();
         }
     }
 }
