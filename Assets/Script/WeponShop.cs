@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,18 +14,21 @@ public class WeponShop : MonoBehaviour
         botton = gameObject.GetComponent<bukiyaBotton>();
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             botton.enter = true;
+            Debug.Log("true");
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+           Debug.Log("false");
            botton.enter = false;
         }
     }
