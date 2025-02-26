@@ -5,11 +5,11 @@ using UnityEngine;
 public class WeponShopPhisycs : MonoBehaviour
 {
     public GameObject cv;
-    WeponShopTolkButton botton;
+    WeponShopTolkButton button;
 
     private void Start()
     {
-        botton = cv.GetComponent<WeponShopTolkButton>();
+        button = cv.GetComponent<WeponShopTolkButton>();
     }
 
 
@@ -17,7 +17,7 @@ public class WeponShopPhisycs : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            botton.ButtonA();
+            button.ButtonA();
         }
     }
 
@@ -25,7 +25,7 @@ public class WeponShopPhisycs : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            botton.ButtonF();
+            button.ButtonF();
         }
     }
 }

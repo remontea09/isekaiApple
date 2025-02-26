@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Chara_move : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private float speed = 0.02f;
     private Animator animator;
@@ -45,5 +45,15 @@ public class Chara_move : MonoBehaviour
             }
             transform.position = pos;
         }
+    }
+
+    public void CMtrue()
+    {
+        CMStatus = true;
+    }
+
+    public void CMfalse()
+    {
+        CMStatus = false;
     }
 }
