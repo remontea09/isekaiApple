@@ -46,6 +46,7 @@ public class WeponShopTolkButton : MonoBehaviour
         gameObject.SetActive(false);
         playercnt.CMfalse();
         ghost = itemKeeper.Ghost;
-        //blade = ghost.ToString;
+        string a = ghost.ToString();
+        blade.SetText(a + "/3");
     }
 }
