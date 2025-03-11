@@ -5,10 +5,12 @@ public class PlayerController : MonoBehaviour
     private float speed = 0.02f;
     private Animator animator;
     public bool CMStatus = true;
+    public int hp;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        hp = 10;
     }
 
     void Update()

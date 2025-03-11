@@ -14,6 +14,8 @@ public class GhostMove : MonoBehaviour
     float playerx;
     float playery;
     float speed; //追尾速度
+    Rigidbody2D rb;
+    PlayerController pc;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,8 @@ public class GhostMove : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerTF = player.GetComponent<Transform>();
         ghostTF = this.transform;
+        rb = player.GetComponent<Rigidbody2D>();
+        pc = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -37,6 +41,14 @@ public class GhostMove : MonoBehaviour
         if(x > 4 || y > 4)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerTF.position, speed);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            //playercontrollerのdirectionの数値でノックバックの方向を変えるプログラムを書く
         }
     }
 }
