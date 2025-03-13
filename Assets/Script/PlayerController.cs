@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public bool CMStatus = true;
     public int hp;
+    public int vec;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         hp = 10;
+        vec = 0;
     }
 
     void Update()
@@ -19,27 +21,30 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 pos = transform.position;
 
-            if (Input.GetKey(KeyCode.S))//↓キーを押したら
+            if (Input.GetKey(KeyCode.S))
             {
                 pos.y -= speed;
-                animator.SetInteger("direction", 0);//正面を向く
+                animator.SetInteger("direction", 0);
+                vec = 0;
             }
-            else if (Input.GetKey(KeyCode.A))//←キーを押したら
+            else if (Input.GetKey(KeyCode.A))
             {
 
                 pos.x -= speed;
-                animator.SetInteger("direction", 1);//左を向く
+                animator.SetInteger("direction", 1);
+                vec = 1;
             }
-            else if (Input.GetKey(KeyCode.D))//→キーを押したら
+            else if (Input.GetKey(KeyCode.D))
             {
                 pos.x += speed;
-                animator.SetInteger("direction", 2);//右を向く
-
+                animator.SetInteger("direction", 2);
+                vec = 2;
             }
-            else if (Input.GetKey(KeyCode.W))//↑キーを押したら
+            else if (Input.GetKey(KeyCode.W))
             {
                 pos.y += speed;
-                animator.SetInteger("direction", 3);//後ろを向く
+                animator.SetInteger("direction", 3);
+                vec = 3;
             }
             else
             {

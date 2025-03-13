@@ -11,11 +11,9 @@ public class WeponShopTolkButton : MonoBehaviour
     public GameObject button;
     GameObject player;
     PlayerController playercnt;
-    public GameObject bladeText;
-    public GameObject icebladeText;
+    public GameObject ringText;
     public GameObject ItemKeeper;
-    TextMeshProUGUI blade;
-    TextMeshProUGUI iceblade;
+    TextMeshProUGUI ring;
     ItemKeeper itemKeeper;
     int ghost = 0;
 
@@ -24,8 +22,7 @@ public class WeponShopTolkButton : MonoBehaviour
         gameObject.SetActive(false);
         player = GameObject.FindWithTag("Player");
         playercnt = player.GetComponent<PlayerController>();
-        blade = bladeText.GetComponent<TextMeshProUGUI>();
-        iceblade = icebladeText.GetComponent<TextMeshProUGUI>();
+        ring = ringText.GetComponent<TextMeshProUGUI>();
         itemKeeper = ItemKeeper.GetComponent<ItemKeeper>();
     }
 
@@ -47,6 +44,6 @@ public class WeponShopTolkButton : MonoBehaviour
         playercnt.CMfalse();
         ghost = itemKeeper.Ghost;
         string a = ghost.ToString();
-        blade.SetText(a + "/3");
+        ring.SetText(a + "/3");
     }
 }

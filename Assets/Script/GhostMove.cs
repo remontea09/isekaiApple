@@ -16,6 +16,8 @@ public class GhostMove : MonoBehaviour
     float speed; //追尾速度
     Rigidbody2D rb;
     PlayerController pc;
+    public AudioClip plDamage;
+    AudioSource plDamageSound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,8 @@ public class GhostMove : MonoBehaviour
         ghostTF = this.transform;
         rb = player.GetComponent<Rigidbody2D>();
         pc = player.GetComponent<PlayerController>();
+        plDamageSound = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -48,7 +52,27 @@ public class GhostMove : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            //playercontrollerのdirectionの数値でノックバックの方向を変えるプログラムを書く
+            //playercontrollerのノックバック
+            if(pc.vec == 0)
+            {
+                collision.gameObject.transform.Translate(0, 1, 0);
+                plDamageSound.PlayOneShot(plDamage);
+            }
+            else if (pc.vec == 1)
+            {
+                collision.gameObject.transform.Translate(1, 0, 0);
+                plDamageSound.PlayOneShot(plDamage);
+            }
+            else if(pc.vec == 2)
+            {
+                collision.gameObject.transform.Translate(-1, 0, 0);
+                plDamageSound.PlayOneShot(plDamage);
+            }
+            else if(pc.vec == 3)
+            {
+                collision.gameObject.transform.Translate(0, -1, 0);
+                plDamageSound.PlayOneShot(plDamage);
+            }
         }
     }
 }
