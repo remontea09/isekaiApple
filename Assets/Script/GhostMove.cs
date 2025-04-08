@@ -165,5 +165,6 @@ public class GhostMove : MonoBehaviour
     private void Dead()
     {
         Destroy(this.gameObject);
+        //ghost‚Ì‘fŞ‚ğ“üè‚³‚¹‚é
     }
 }

@@ -37,7 +37,7 @@ public class OnAttack : MonoBehaviour
             pc.hp -= 1;
         }
 
-        //ƒRƒ‹[ƒ`ƒ“‚ÅSetActiv(false)‚ğ’x‚ç‚¹‚é
+        //UniTask‚ÅSetActiv(false)‚ğ’x‚ç‚¹‚é
         //this.gameObject.SetActive(false);
     }
 

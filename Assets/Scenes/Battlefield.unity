@@ -112319,7 +112319,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: '5
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3d164d4a8be17648966b72f4218d875, type: 2}
   m_sharedMaterial: {fileID: 598854999412137234, guid: d3d164d4a8be17648966b72f4218d875, type: 2}
@@ -112412,7 +112414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.144585, y: -4.2681274}
+  m_AnchoredPosition: {x: 42.7, y: -4.9}
   m_SizeDelta: {x: 394.3278, y: 171.1934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &385699515
@@ -113232,7 +113234,7 @@ GameObject:
   - component: {fileID: 900414656}
   - component: {fileID: 900414657}
   m_Layer: 0
-  m_Name: AttackBack
+  m_Name: AttackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113643,7 +113645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -381, y: 488}
+  m_AnchoredPosition: {x: -438.4, y: 493.9}
   m_SizeDelta: {x: 72.2756, y: 22.8507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138045438
@@ -113814,8 +113816,8 @@ MonoBehaviour:
   hitDamage: {fileID: 1451328123}
   hp: 0
   attackFront: {fileID: 720013689}
-  attackBack: {fileID: 900414652}
-  attackRight: {fileID: 1585400427}
+  attackBack: {fileID: 1585400427}
+  attackRight: {fileID: 900414652}
   attackLeft: {fileID: 869869700}
 --- !u!70 &1239881667
 CapsuleCollider2D:
@@ -114165,7 +114167,7 @@ GameObject:
   - component: {fileID: 1585400431}
   - component: {fileID: 1585400432}
   m_Layer: 0
-  m_Name: AttackRight
+  m_Name: AttackBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114820,7 +114822,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.548447, y: -11.310577}
+  m_AnchoredPosition: {x: 32.103855, y: -11.942361}
   m_SizeDelta: {x: 394.3278, y: 171.1934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901688953
