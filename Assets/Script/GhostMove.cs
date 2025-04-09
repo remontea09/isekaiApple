@@ -70,7 +70,7 @@ public class GhostMove : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerTF.position, speed);
             attack = false;
         }
-        else　//移動していなければ攻撃
+        else　//移動していなければ攻撃　移動フラグの立て方を変える
         {
             attack = true;
         }
