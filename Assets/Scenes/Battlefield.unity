@@ -114984,6 +114984,10 @@ PrefabInstance:
       propertyPath: hitImage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6912679225364806182, guid: 14f90b201b6559f40bce8a7950e357e9, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7755495543240894885, guid: 14f90b201b6559f40bce8a7950e357e9, type: 3}
       propertyPath: m_Name
       value: Player

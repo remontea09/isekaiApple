@@ -1,6 +1,9 @@
+using Cysharp.Threading.Tasks;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class OnAttack : MonoBehaviour
@@ -18,7 +21,7 @@ public class OnAttack : MonoBehaviour
         pc = player.GetComponent<PlayerController>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         a = true;
     }
@@ -31,14 +34,11 @@ public class OnAttack : MonoBehaviour
 
     public void Attack()
     {
-        if(a == true)
+        if (a == true)
         {
             atks.PlayOneShot(attackSound);
             pc.hp -= 1;
         }
-
-        //UniTask‚ÅSetActiv(false)‚ð’x‚ç‚¹‚é
-        //this.gameObject.SetActive(false);
     }
 
 
