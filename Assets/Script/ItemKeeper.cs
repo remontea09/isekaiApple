@@ -10,7 +10,7 @@ public class ItemKeeper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
@@ -19,13 +19,8 @@ public class ItemKeeper : MonoBehaviour
         
     }
 
-    public void GhostPlus(int a)
+    public void GhostPlus()
     {
-        Ghost += a;
-    }
-
-    public void GhostMinus(int a)
-    {
-        Ghost -= a;
+        Ghost += 1;
     }
 }

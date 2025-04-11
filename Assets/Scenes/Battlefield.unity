@@ -113819,6 +113819,7 @@ MonoBehaviour:
   attackBack: {fileID: 1585400427}
   attackRight: {fileID: 900414652}
   attackLeft: {fileID: 869869700}
+  itemKeeper: {fileID: 0}
 --- !u!70 &1239881667
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
