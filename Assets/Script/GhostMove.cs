@@ -64,13 +64,14 @@ public class GhostMove : MonoBehaviour
         playery = playerTF.transform.position.y;
         float x = Mathf.Abs(ghostx - playerx);
         float y = Mathf.Abs(ghosty - playery);
+        var token = this.GetCancellationTokenOnDestroy();
 
-        if(x > 4 || y > 4)
+        if (x > 4 || y > 4)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerTF.position, speed);
             attack = false;
         }
-        else　//移動していなければ攻撃　移動フラグの立て方を変える
+        else　if(x > 1 || y > 1)//移動していなければ攻撃　移動フラグの立て方を変える
         {
             attack = true;
         }
@@ -83,76 +84,67 @@ public class GhostMove : MonoBehaviour
         if(attack == true)//攻撃メソッドを呼び出す debug.logを後から消す
         {
 
-            var token = this.GetCancellationTokenOnDestroy();
-
             if (playerx < ghostx)//プレイヤーが幽霊より左側にいることが確定
             {
 
                 if (playery > ghosty - 1.0f && playery < ghosty + 1.0f)//プレイヤーが左側にいる
                 {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     Debug.Log("Left");
                     attackLeft.SetActive(true);
                     await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     atL.Attack();
                     attackLeft.SetActive(false);
-                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                 }
                 else if (playery < ghosty + 1.0f)//プレイヤーが下側にいる
                 {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     Debug.Log("under");
                     attackFront.SetActive(true);
                     await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     atF.Attack();
                     attackFront.SetActive(false);
-                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                 }
                 else //プレイヤーが上側に居る
                 {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     Debug.Log("up");
                     attackBack.SetActive(true);
                     await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     atB.Attack();
                     attackBack.SetActive(false);
-                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                 }
             }
             else if (playerx > ghostx)//プレイヤーが幽霊より右側にいることが確定
             {
                 if (playery > ghosty - 1.0f && playery < ghosty + 1.0f)//プレイヤーが右側にいる
                 {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     Debug.Log("right");
                     attackRight.SetActive(true);
                     await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     atR.Attack();
                     attackRight.SetActive(false);
-                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                 }
                 else if (playery < ghosty + 1.0f)//プレイヤーが下側にいる
                 {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     Debug.Log("under");
                     attackFront.SetActive(true);
                     await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     atF.Attack();
                     attackFront.SetActive(false);
-                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                 }
                 else //プレイヤーが上側に居る
                 {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     Debug.Log("up");
                     attackBack.SetActive(true);
                     await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                     atB.Attack();
                     attackBack.SetActive(false);
-                    await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
                 }
             }
-        }
-        else if(attack == false)
-        {
-            attackBack.SetActive(false);
-            attackFront.SetActive(false);
-            attackLeft.SetActive(false);
-            attackRight.SetActive(false);
         }
     }
 
