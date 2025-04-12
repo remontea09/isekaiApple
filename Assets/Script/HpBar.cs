@@ -10,7 +10,7 @@ public class HpBar : MonoBehaviour
     public TextMeshProUGUI enemyHP;
     public TextMeshProUGUI myHP;
     public GameObject ghost;
-    public GameObject player;
+    GameObject player;
     GhostMove gm;
     PlayerController pc;
     int iEnemyHP;
@@ -20,6 +20,7 @@ public class HpBar : MonoBehaviour
     void Start()
     {
         gm = ghost.GetComponent<GhostMove>();
+        player = GameObject.Find("player");
         pc = player.GetComponent<PlayerController>(); 
     }
 

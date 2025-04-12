@@ -42,6 +42,9 @@ public class Story : MonoBehaviour
         {
             ghost = GameObject.Find("Ghost");
             ghostMove = ghost.GetComponent<GhostMove>();
+            pos = new Vector2 (0, -1.52f);
+            plt.transform.position = pos;
+            pc.CMfalse();
             //以下会話イベント
             playerImage.SetActive(true);
             playerText.text = "草原に来たぞ！";
