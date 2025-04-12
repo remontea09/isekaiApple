@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         hp = 5;
         vec = 0;
+        DontDestroyOnLoad(this);
     }
 
     void Update()

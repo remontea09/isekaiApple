@@ -57,7 +57,6 @@ public class GhostMove : MonoBehaviour
         atL = attackLeft.GetComponent<OnAttack>();
         itemKeeper = GameObject.Find("ItemKeeper");
         ik = itemKeeper.GetComponent<ItemKeeper>();
-        Attack();
     }
 
     // Update is called once per frame
@@ -124,7 +123,7 @@ public class GhostMove : MonoBehaviour
         ik.GhostPlus();//ghostÇÃëfçﬁÇì¸éËÇ≥ÇπÇÈ
     }
 
-    async void Attack()
+    public async void Attack()
     {
 
         var token = this.GetCancellationTokenOnDestroy();
@@ -132,7 +131,7 @@ public class GhostMove : MonoBehaviour
         while (true)
         {
 
-            await UniTask.Delay(TimeSpan.FromSeconds(5f), cancellationToken: token);
+            await UniTask.Delay(TimeSpan.FromSeconds(2f), cancellationToken: token);//çUåÇä‘äu
 
             if (playerx < ghostx)//ÉvÉåÉCÉÑÅ[Ç™óHóÏÇÊÇËç∂ë§Ç…Ç¢ÇÈÇ±Ç∆Ç™ämíË
             {

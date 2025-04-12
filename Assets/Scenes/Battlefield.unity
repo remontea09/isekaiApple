@@ -113819,7 +113819,6 @@ MonoBehaviour:
   attackBack: {fileID: 1585400427}
   attackRight: {fileID: 900414652}
   attackLeft: {fileID: 869869700}
-  itemKeeper: {fileID: 0}
 --- !u!70 &1239881667
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -114981,6 +114980,10 @@ PrefabInstance:
       propertyPath: hitImg
       value: 
       objectReference: {fileID: 21300000, guid: 243bee6795aeb084b86b96eab1efcd75, type: 3}
+    - target: {fileID: 6797067496163127742, guid: 14f90b201b6559f40bce8a7950e357e9, type: 3}
+      propertyPath: CMStatus
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6797067496163127742, guid: 14f90b201b6559f40bce8a7950e357e9, type: 3}
       propertyPath: hitImage
       value: 
